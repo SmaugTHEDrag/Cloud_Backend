@@ -47,9 +47,6 @@ db.connect(err => {
 // app.get('/', (req, res) => {
 //     res.send('Hello World!');
 // });
-app.get('/healthy', (req, res) => {
-    res.status(200).send('OK');
-});
 app.post('/upload-book', (req, res) => {
     const { bookTitle, authorName, imageURL, category, bookDescription, bookPDFURL } = req.body;
     const sql = `INSERT INTO Books (bookTitle, authorName, imageURL, category, bookDescription, bookPDFURL) VALUES (?, ?, ?, ?, ?, ?)`;
